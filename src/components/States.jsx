@@ -1,7 +1,7 @@
 import { CookingPot, Heater, ScrollText } from 'lucide-react';
 import React from 'react';
 
-const States = () => {
+const States = ({totalOrder}) => {
     return (
         
      <div className="container mx-auto py-10 px-6 grid grid-cols-1 lg:grid-cols-3 gap-5">
@@ -12,7 +12,7 @@ const States = () => {
           <ScrollText className="animate-pulse" color="#fcb700" size={100} />
           <div className="text-xl text-center">
             Current Orders
-            <h2 className="text-6xl font-bold">{0}</h2>
+            <h2 className="text-6xl font-bold">{totalOrder}</h2>
           </div>
         </div>
       </div>

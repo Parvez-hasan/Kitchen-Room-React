@@ -22,7 +22,7 @@ function App() {
 
      <main>
        
-      <Suspense>
+      <Suspense fallback={<span className="text-2xl flex justify-center items-center mt-4">Loading...</span>}>
         <OrderContainer promise={orderPromise}></OrderContainer>
       </Suspense>
 
