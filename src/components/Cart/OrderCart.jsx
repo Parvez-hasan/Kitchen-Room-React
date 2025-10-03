@@ -1,11 +1,9 @@
 import React from 'react';
 import { UtensilsCrossed } from "lucide-react";
 
-const OrderCart = ({order}) => {
+const OrderCart = ({order,handleOrder}) => {
 
-   const handleOrder = (order) => {
-console.log(order);
-   }
+  
     return (
         <div onClick={()=> handleOrder(order)} className="p-5 rounded-xl shadow-xl relative space-y-3">
             {/* Order Number */}
