@@ -4,23 +4,25 @@ import { use } from 'react';
 import OrderCart from './Cart/OrderCart';
 import CookingCard from './Cart/CookingCard';
 import ReadyCart from './Cart/ReadyCart';
+import { toast } from 'react-toastify';
 
 const OrderContainer = ({ promise }) => {
 
-    const orders = use(promise);
+    const data = use(promise);
     //   console.log(orders);
   
-    const [removeOrder, setRemoveOrder] = useState(orders);
+    const [orders, setOrders] = useState(data);
 
     const [cookingItem, setCookingItem] = useState([]);
     const [readyItems, setReadyItem] = useState([]);
 
     const handleOrder = (order) => {
+        // toast.success('order called')
      const isExist = cookingItem.find((item) => item.id == order.id);
 
         if (isExist) {
-            alert("alrady cooking")
-            return
+            toast.error("Order allrady On processing!")
+            return;
         }
 
 
@@ -29,6 +31,9 @@ const OrderContainer = ({ promise }) => {
     };
 
     const handleCooking = (order) => {
+       // cookig time add
+       order.cookedAt = new Date().toLocaleTimeString();
+
         // add cooking 
         const newReadyItem = [...readyItems, order];
         setReadyItem(newReadyItem);
@@ -38,8 +43,8 @@ const OrderContainer = ({ promise }) => {
         setCookingItem(remeaning);
 
         // order teke order cart remove
-        const remeainingOrder = removeOrder.filter((item) => item.id !== order.id)
-        setRemoveOrder(remeainingOrder);
+        const remeainingOrder = orders.filter((item) => item.id !== order.id)
+        setOrders(remeainingOrder);
     };
     
 

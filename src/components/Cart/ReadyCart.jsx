@@ -6,6 +6,7 @@ const ReadyCart = ({order}) => {
             <h2 className='text-2xl font-bold'>{order.order_title}</h2>
             <h2>Table No: {order.order_no}</h2>
             <h2>Water Id: {order.waiterId}</h2>
+            <h2>Cooking Time: {order.cookedAt}</h2>
         </div>
     );
 };
