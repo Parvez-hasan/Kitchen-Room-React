@@ -5,7 +5,7 @@ const OrderCart = ({order,handleOrder}) => {
 
   
     return (
-        <div onClick={()=> handleOrder(order)} className="p-5 rounded-xl shadow-xl relative space-y-3">
+        <div onClick={()=> handleOrder(order)} className="p-5 rounded-xl shadow-xl bg-blue-50 relative space-y-3">
             {/* Order Number */}
             <p className="text-xs bg-amber-400 p-2 inline-block rounded-xl">
                 #{order.order_no}
